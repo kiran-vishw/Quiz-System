@@ -71,11 +71,6 @@
               <td class="px-4 py-2">{{ $value->created_at }}</td>
               <td class="px-4 py-2">
                 <div class="flex justify-center items-center gap-4">
-                  <a href="/edit-category/{{ $value->id }}" class="text-blue-600">
-                    <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 -960 960 960" fill="#75FB4C">
-                      <path d="M216-144q-29.7 0-50.85-21.15Q144-186.3 144-216v-528q0-30.11 21-51.56Q186-817 216-816h346l-72 72H216v528h528v-274l72-72v346q0 29.7-21.15 50.85Q773.7-144 744-144H216Zm168-240v-153l354-354q11-11 24-16t26.5-5q14.4 0 27.45 5 13.05 5 23.99 15.78L891-840q11 11 16 24.18t5 26.82q0 13.66-5.02 26.87-5.02 13.2-15.98 24.13L537-384H384Z"/>
-                    </svg>
-                  </a>
                   <a href="/delete-category/{{ $value->id }}" class="text-red-600">
                     <svg xmlns="http://www.w3.org/2000/svg" height="20px" width="20px" viewBox="0 -960 960 960" fill="#eb7373">
                       <path d="M312-144q-29.7 0-50.85-21.15Q240-186.3 240-216v-480h-48v-72h192v-48h192v48h192v72h-48v479.57Q720-186 698.85-165T648-144H312Z"/>

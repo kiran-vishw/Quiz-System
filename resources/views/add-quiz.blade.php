@@ -42,6 +42,7 @@
             Select Category
             </label>
             <select name="category_id" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">Select</option>
                 @foreach($categories as $key=>$value)
                 <option value="{{$value->id}}">{{ $value->name }}</option>
                 @endforeach
@@ -63,15 +64,13 @@
            Add MCQs
          </h1>
 
-         <form method="" action="">
+         <form method="post" action="\add-mcq">
           
          <div class="mb-4">
-            <!-- <label class="block text-gray-700 font-medium mb-2">
-            Option A
-            </label> -->
+           @csrf
             <textarea
               type="text"
-              name="quizname"
+              name="question"
               placeholder="Enter Question"
               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               ></textarea>
@@ -83,7 +82,7 @@
             </label>
             <input
               type="text"
-              name="quizname"
+              name="a"
               placeholder="Enter Option A"
               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
@@ -94,7 +93,7 @@
             </label>
             <input
               type="text"
-              name="quizname"
+              name="b"
               placeholder="Enter Option B"
               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
@@ -105,7 +104,7 @@
             </label>
             <input
               type="text"
-              name="quizname"
+              name="c"
               placeholder="Enter Option C"
               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
@@ -116,7 +115,7 @@
             </label>
             <input
               type="text"
-              name="quizname"
+              name="d"
               placeholder="Enter Option D"
               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
@@ -125,26 +124,28 @@
             <label class="block text-gray-700 font-medium mb-2">
             Correct Answer:
             </label>
-            <select name="right_answer" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
-              <option>A</option>
-              <option>B</option>
-              <option>C</option>
-              <option>D</option>
+            <select name="correct_ans" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+              <option value="">Select</option>
+              <option value="a">A</option>
+              <option value="b">B</option>
+              <option value="c">C</option>
+              <option value="d">D</option>
             </select>
           </div>
-         </form>
+         
 
          <button
-            type="text"
+            type="submit" name="add_more" value="add_more"
             class="w-full bg-blue-600 text-white py-2 rounded-lg font-semibold hover:bg-blue-700 transition">
           Add More
           </button>
         
           <button
-            type="submit"
+            type="submit" name="done" value="done"
             class="w-full bg-green-600 text-white py-2 mt-5 rounded-lg font-semibold hover:bg-blue-700 transition">
           Add and Save
           </button>
+          </form>
 
         @endif
               </div>

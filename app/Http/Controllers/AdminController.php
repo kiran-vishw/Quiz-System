@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Session;
 use App\Models\Admin;
 use App\Models\Category;
 use App\Models\Quiz;
+use App\Models\Mcq;
 use Symfony\Contracts\Service\Attribute\Required;
 
 class AdminController extends Controller
@@ -77,11 +78,6 @@ class AdminController extends Controller
         }
     }
 
-    // public function editCategory($id){
-    //     $result=Category::where("id",$id)->first();
-    //     return redirect("admin-categories",["editCategory"=>$result]);
-    // }
-
     public function deleteCategory($id){
         $result=Category::where("id",$id)->delete();
         if($result){
@@ -107,6 +103,34 @@ class AdminController extends Controller
         }else{
              return redirect("admin-login");
         }
+    }
+
+    public function addMCQ(Request $request){
+        $mcq=new Mcq();
+        $admin=Session::get("admin");
+        $quiz=Session::get("quizDetails");
+
+        $mcq->question=$request->question;
+        $mcq->a=$request->a;
+        $mcq->b=$request->b;
+        $mcq->c=$request->c;
+        $mcq->d=$request->d;
+        $mcq->correct_ans=$request->correct_ans;
+        $mcq->admin_id=$admin->id;
+        $mcq->quiz_id=$quiz->id;
+        $mcq->category_id=$quiz->category_id;
+        if($mcq->save()){
+            if($request->add_more=="add_more"){
+                return redirect(url()->previous());
+            }else{
+                Session::forget("quizDetails");
+                 return redirect("add-quiz");
+            }
+
+        }
+
+        
+
     }
 
 }
