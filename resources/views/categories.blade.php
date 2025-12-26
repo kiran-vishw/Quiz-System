@@ -15,11 +15,12 @@
         <form action="\add-category" method="post">
           <!-- Email -->
           @csrf 
-          <span class="text-green-500">
+          <span class="text-green-600 bg-emerald-100 flex">
           @if(session('category')) 
           {{session('category')}}
           @endif
           </span>
+          
           <div class="mb-4">
             <label class="block text-gray-700 font-medium mb-2">
             Category
@@ -31,7 +32,7 @@
                value="{{ old('categoryname', $editCategory->name ?? '') }}"
               class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
-            <span class="text-red-500">@error("categoryname") {{$message}} @enderror</span>
+            <span class="text-red-500 bg-red-100 flex mt-2">@error("categoryname") {{$message}} @enderror</span>
           </div>
           <!-- Login Button -->
           <button

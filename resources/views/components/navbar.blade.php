@@ -12,7 +12,7 @@
                <nav class="ml-auto flex space-x-6">
                   <a href="/dashboard" class="text-gray-700 hover:text-blue-600 font-medium">Dashboard</a>
                   <a href="/admin-categories" class="text-gray-700 hover:text-blue-600 font-medium">Categories</a>
-                  <a href="/admin-categories" class="text-gray-700 hover:text-blue-600 font-medium">Quiz</a>
+                  <a href="/add-quiz" class="text-gray-700 hover:text-blue-600 font-medium">Quiz</a>
                   <a href="/admin-categories" class="text-gray-700 hover:text-blue-600 font-medium">Welcome {{$name}}</a>
                   <div>
                      <a href="/admin-logout"  class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
