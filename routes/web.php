@@ -18,3 +18,6 @@ Route::get("edit-category/{id}",[AdminController::class,"editCategory"]);
 Route::get("delete-category/{id}",[AdminController::class,"deleteCategory"]);
 Route::get("add-quiz",[AdminController::class,"addQuiz"]);
 Route::post("add-mcq",[AdminController::class,"addMCQ"]);
+Route::get("end-quiz",[AdminController::class,"endQuiz"]);
+Route::get("show-mcq/{id}/{quizName}",[AdminController::class,"showMCQ"]);
+Route::get("quiz-list/{id}/{quizName}",[AdminController::class,"quizList"]);

@@ -15,8 +15,8 @@
                   <a href="/add-quiz" class="text-gray-700 hover:text-blue-600 font-medium">Quiz</a>
                   <a href="/admin-categories" class="text-gray-700 hover:text-blue-600 font-medium">Welcome {{$name}}</a>
                   <div>
-                     <a href="/admin-logout"  class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-                     Login
+                     <a href="/admin-logout"  class="bg-red-300 text-white px-4 py-2 rounded-lg hover:bg-red-600">
+                     Logout 
     </a>
                   </div>
                </nav>
